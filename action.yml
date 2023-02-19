@@ -1,0 +1,21 @@
+name: 'LCOV Pull Request Report'
+description: 'Action for reporting LCOV code coverage on pull requests'
+inputs:
+  lcov-file:
+    description: 'Lcov file location'
+  github-token:
+    description: 'Github token from secrets.GITHUB_TOKEN, required for getting list of changed files and posting comments'
+  working-directory:
+    description: 'Working directory (Default to repository root)'
+  comment-title:
+    description: 'Report comment title (Default to empty)'
+  all-files-minimum-coverage:
+    description: 'All files minimum coverage in percentage, e.g. 0, 50, 100 (Default to 0)'
+  changed-files-minimum-coverage:
+    description: 'Changed files minimum coverage in percentage, e.g. 0, 50, 100 (Default to 0)'
+  artifact-name:
+    description: 'Artifact name of the generated html (Default to empty / skip uploading artifact). Lcov is required to be installed.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+  
