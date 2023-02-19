@@ -1,5 +1,8 @@
 name: 'LCOV Pull Request Report'
 description: 'Action for reporting LCOV code coverage on pull requests'
+branding:
+  icon: 'umbrella'
+  color: 'blue'
 inputs:
   lcov-file:
     description: 'Lcov file location'
