@@ -55,9 +55,15 @@ Action for reporting LCOV code coverage on pull requests
 
 # Permissions
 
-Write permission must be given for writing pull request comment. There are 2 ways:
-- Enable "Read and write permissions" in Repository Settings > Code and automation > Actions > General > Workflow permissions, or
-- Add `permissions: write-all` to the job. See https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+Write permission must be granted to allow writing pull request comments. There are multiple methods available, but you only need to implement one:
+1. Enable "Read and write permissions" in Repository Settings > Code and automation > Actions > General > Workflow permissions.
+2. Add `permissions: write-all` to the job. Refer to [GitHub documentation](https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs) for more details.
+3. If you require more granular control over the permissions, you can specify only the necessary permissions. Please note that this will default all other permissions to none:
+    ```yaml
+    permissions: 
+      contents: read
+      pull-requests: write
+    ```
 
 # License
 
