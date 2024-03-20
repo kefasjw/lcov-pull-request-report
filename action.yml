@@ -19,6 +19,6 @@ inputs:
   artifact-name:
     description: 'Artifact name of the generated html (Default to empty / skip uploading artifact). Lcov is required to be installed.'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
   
