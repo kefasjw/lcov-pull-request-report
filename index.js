@@ -6,7 +6,6 @@ import glob from '@actions/glob';
 import lcovParse from 'lcov-parse';
 import { markdownTable } from 'markdown-table';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
 
 async function run() {
     try {
@@ -246,7 +245,7 @@ function renderPassed(isPassed) {
 
 async function uploadArtifact(lcovFile, artifactName, workingDirectory) {
     const artifact = new DefaultArtifactClient();
-    const artifactPath = path.resolve(uuidv4());
+    const artifactPath = path.resolve('sdlkjfslkdfj');
     await exec.exec(`genhtml ${lcovFile} -o ${artifactPath}`, [], { cwd: workingDirectory })
     const globber = await glob.create(`${artifactPath}/**`);
     const files = await globber.glob();
