@@ -5,7 +5,7 @@
   "description": "Action for reporting LCOV code coverage on pull requests",
   "main": "index.js",
   "scripts": {
-    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt --external encoding"
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt"
   },
   "author": "Kefas",
   "dependencies": {
