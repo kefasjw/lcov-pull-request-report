@@ -250,5 +250,5 @@ async function uploadArtifact(lcovFile, artifactName, workingDirectory) {
     const globber = await glob.create(`${artifactPath}/**`);
     const files = await globber.glob();
     console.log('Uploading artifact...');
-    await artifact.create().uploadArtifact(artifactName, files, artifactPath, { continueOnError: false });
+    await artifact.uploadArtifact(artifactName, files, artifactPath, { continueOnError: false });
 }
