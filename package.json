@@ -19,7 +19,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.38.1"
+    "@vercel/ncc": "^0.38.3"
   },
   "engines": {
     "node": "20.x"
