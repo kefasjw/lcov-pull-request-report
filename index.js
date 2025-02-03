@@ -1,4 +1,4 @@
-import artifact from '@actions/artifact';
+import { DefaultArtifactClient } from '@actions/artifact';
 import core from '@actions/core';
 import exec from '@actions/exec';
 import github from '@actions/github';
@@ -245,6 +245,7 @@ function renderPassed(isPassed) {
 }
 
 async function uploadArtifact(lcovFile, artifactName, workingDirectory) {
+    const artifact = new DefaultArtifactClient();
     const artifactPath = path.resolve(uuidv4());
     await exec.exec(`genhtml ${lcovFile} -o ${artifactPath}`, [], { cwd: workingDirectory })
     const globber = await glob.create(`${artifactPath}/**`);
